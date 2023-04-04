@@ -160,3 +160,19 @@ function isValidGrid(grid) {
     return true;
   }
   
+  // Récupération du bouton de réinitialisation
+const resetButton = document.querySelector('#reset-button');
+
+// Récupération de tous les champs de formulaire
+const formFields = document.querySelectorAll('input, textarea');
+
+// Fonction qui efface les valeurs des champs de formulaire
+function resetFormFields() {
+  // Parcours de tous les champs de formulaire et effacement de leur valeur
+  formFields.forEach((field) => {
+    field.value = '';
+  });
+}
+
+// Ajout de l'événement de clic au bouton de réinitialisation
+resetButton.addEventListener('click', resetFormFields);
