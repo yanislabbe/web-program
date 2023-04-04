@@ -1,0 +1,205 @@
+/* Couleurs */
+:root {
+    --color-primary: #007bff;
+    --color-secondary: #6c757d;
+    --color-tertiary: #f8f9fa;
+    --color-text: #333;
+  }
+  
+  /* Styles globaux */
+  body {
+    background-color: var(--color-tertiary);
+    color: var(--color-text);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+  }
+  
+  .container {
+    margin-top: 3rem;
+  }
+  
+  /* Formulaire de génération de Sudoku */
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  
+  .form-group {
+    margin-right: 1.5rem;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  
+  select {
+    width: 10rem;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    color: #333333;
+    font-size: 1rem;
+    font-weight: 600;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s ease-in-out;
+  }
+  
+  select:focus {
+    outline: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  button {
+    background-color: var(--color-primary);
+    color: var(--color-tertiary);
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  button:hover {
+    background-color: var(--color-secondary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Tableau de Sudoku */
+  .sudoku-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  
+  .sudoku {
+    width: 400px;
+    height: 400px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .sudoku td {
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+    text-align: center;
+    vertical-align: middle;
+    font-size: 2rem;
+    font-weight: 700;
+    border: 1px solid #cccccc;
+    transition: background-color 0.2s ease-in-out;
+    position: relative;
+    z-index: 1;
+    }
+    
+    .sudoku td.initial {
+    background-color: #f5f5f5;
+    font-weight: 600;
+    }
+    
+    .sudoku td.editable {
+    background-color: #ffffff;
+    }
+    
+    .sudoku td.invalid {
+    background-color: #ffcccc;
+    }
+    
+    .sudoku td:hover {
+    background-color: var(--color-primary);
+    color: var(--color-tertiary);
+    }
+    
+    /* Édition de cellule */
+    .sudoku td input {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    color: #333333;
+    transition: background-color 0.2s ease-in-out;
+    }
+    
+    .sudoku td input:focus {
+    outline: none;
+    background-color: #ffffff;
+    }
+    
+    /* Boutons de résolution et de réinitialisation */
+    .sudoku-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    position: relative;
+    z-index: 1;
+    }
+    
+    .sudoku-buttons button {
+    background-color: transparent;
+    color: var(--color-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    border: 2px solid var(--color-primary);
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    margin-right: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .sudoku-buttons button:hover {
+    background-color: var(--color-primary);
+    color: var(--color-tertiary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .sudoku-buttons button:active {
+    transform: translateY(1px);
+    box-shadow: none;
+    }
+    
+    .sudoku-buttons button:last-of-type {
+    margin-right: 0;
+    }
+    
+    /* Médias */
+    @media only screen and (max-width: 768px) {
+    .sudoku {
+    width: 90vw;
+    height: 90vw;
+    max-width: 400px;
+    max-height: 400px;
+    }
+    
+    .sudoku td {
+    font-size: 1.5rem;
+    }
+    
+    .sudoku td input {
+    font-size: 1.5rem;
+    }
+    }

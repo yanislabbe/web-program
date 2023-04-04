@@ -1,0 +1,54 @@
+body {
+    margin-top: 100px;
+}
+
+/* Style pour le header */
+header {
+    background-color: #0a192f;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+  
+  /* Style pour le menu */
+  .menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu li {
+    margin-right: 20px;
+  }
+  
+  .menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .menu a:hover {
+    background-color: #1d3b5c;
+  }
+  
+  /* Style pour le logo */
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 1px;
+    font-family: 'Montserrat', sans-serif;
+    margin-right: auto;
+  }
