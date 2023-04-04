@@ -52,7 +52,7 @@ body {
     font-size: 1.4rem;
     text-transform: uppercase;
     color: #fff;
-    background-color: #4a4e69;
+    background-color: #39ba1c;
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -62,4 +62,23 @@ body {
   #solve-button:hover {
     background-color: #3e415b;
   }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   
+  #reset-button {
+    display: block;
+    margin: 2rem auto 1rem;
+    padding: 1rem 2.5rem;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #b51d1d;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
